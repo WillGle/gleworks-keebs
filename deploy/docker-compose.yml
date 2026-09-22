@@ -10,6 +10,7 @@ services:
     image: ${FRONTEND_IMAGE:-glework-frontend:${TAG:-latest}}
     expose:
       - "80"
+      - "8080" # nginx stub_status, scraped by nginx-exporter (monitoring overlay)
     restart: unless-stopped
 
   caddy:

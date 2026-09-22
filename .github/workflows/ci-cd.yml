@@ -87,6 +87,7 @@ jobs:
           script: |
             set -e
             cd ~/GleWorks
+            git remote set-url origin https://github.com/WillGle/gleworks-portfolio.git
             git pull --ff-only
             sed -i '/^FRONTEND_IMAGE=/d' deploy/.env
             echo "FRONTEND_IMAGE=ghcr.io/${{ steps.owner.outputs.lc }}/glework-frontend:latest" >> deploy/.env

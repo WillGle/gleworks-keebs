@@ -9,7 +9,7 @@
   hosts: gleworks
   become: true
   vars:
-    repo_url: "https://github.com/WillGle/GleWorks.git"
+    repo_url: "https://github.com/WillGle/gleworks-portfolio.git"
     repo_branch: "main"
     app_dir: "/opt/gleworks"
   tasks:

@@ -1,6 +1,19 @@
 # Caddy auto-provisions HTTPS (Let's Encrypt) for $DOMAIN.
 # A DNS A record for $DOMAIN must point to this VPS before first boot.
+
+# Admin API binds 0.0.0.0 (not just 127.0.0.1) so the Prometheus container on
+# the same docker network can scrape /metrics. Not published to the host in
+# any compose file, so it's unreachable from outside the docker network.
+{
+	admin 0.0.0.0:2019
+	metrics
+}
+
 {$DOMAIN} {
 	encode gzip zstd
+	log {
+		output stdout
+		format json
+	}
 	reverse_proxy frontend:80
 }
