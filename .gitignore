@@ -4,10 +4,13 @@ node_modules
 /dist/
 /.direnv/
 /coverage/
+/test-results/
+/playwright-report/
+/logs/
 *.log
 .DS_Store
 
-# deploy secrets / local ansible inventory
+# local deployment files
 /deploy/.env
 /deploy/ansible/inventory.ini
 

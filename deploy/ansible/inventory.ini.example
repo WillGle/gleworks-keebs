@@ -1,6 +1,0 @@
-# Copy to inventory.ini and set your VPS address.
-[gleworks]
-your-vps-ip-or-hostname ansible_user=root
-
-# If you log in as a non-root sudo user instead:
-# your-vps-ip ansible_user=ubuntu ansible_become_password=...
