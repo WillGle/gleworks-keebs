@@ -1,60 +1,25 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@hooks': path.resolve(__dirname, './src/hooks'),
-    }
-  },
-  
   server: {
     port: 5173,
-    host: true, // Listen on all interfaces (needed for Tailscale/Docker)
-    strictPort: false,
-    
-    // HMR configuration
-    hmr: {
-      overlay: true,
-    },
+    host: '127.0.0.1',
+    // Fail on a busy port instead of leaving a server on an unexpected port.
+    strictPort: true,
   },
   
   build: {
-    outDir: 'dist',
-    sourcemap: true,
-    
-    // Optimize chunks
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'icons': ['react-icons'],
-        },
-      }
-    },
-    
-    // Set chunk size warning limit
-    chunkSizeWarningLimit: 1000,
+    emptyOutDir: true,
+    sourcemap: false,
   },
   
   preview: {
     port: 4173,
-    host: true,
-  },
-  
-  // Test configuration (for vitest)
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
-    css: true,
+    host: '127.0.0.1',
+    strictPort: true,
   },
 })

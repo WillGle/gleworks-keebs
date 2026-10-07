@@ -8,4 +8,5 @@ afterEach(() => {
   localStorage.clear()
   sessionStorage.clear()
   vi.clearAllMocks()
+  window.history.replaceState({}, '', '/')
 })

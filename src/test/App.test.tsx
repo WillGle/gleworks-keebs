@@ -1,5 +1,5 @@
 // Smoke tests for the main route shell and a few public pages.
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import App from '../App'
 
 const renderAtRoute = (route = '/home') => {
@@ -14,6 +14,24 @@ test('renders the landing page', () => {
       name: 'Masterpiece comes with immaculate craftsmanship',
     })
   ).toBeInTheDocument()
+})
+
+test('redirects the root URL to the landing page', async () => {
+  renderAtRoute('/')
+  expect(await screen.findByRole('heading', {
+    name: 'Masterpiece comes with immaculate craftsmanship',
+  })).toBeInTheDocument()
+  expect(window.location.pathname).toBe('/home')
+})
+
+test('navigates from the landing page to service and back home', async () => {
+  renderAtRoute('/home')
+  fireEvent.click(screen.getByRole('link', { name: 'Service' }))
+  expect(await screen.findByRole('heading', { name: 'Commissions are temporarily closed' })).toBeInTheDocument()
+  fireEvent.click(screen.getByRole('link', { name: 'Back home' }))
+  expect(screen.getByRole('heading', {
+    name: 'Masterpiece comes with immaculate craftsmanship',
+  })).toBeInTheDocument()
 })
 
 test('renders the not found page for unknown routes', async () => {

@@ -5,7 +5,12 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['coverage', 'dist', 'node_modules', '*.config.js'] },
+  { ignores: ['coverage', 'dist', 'node_modules', 'logs', 'test-results', 'playwright-report', '*.config.js'] },
+  {
+    ...js.configs.recommended,
+    files: ['scripts/*.mjs'],
+    languageOptions: { globals: globals.node },
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
