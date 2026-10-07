@@ -57,23 +57,6 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
-      {/* <section className="popular-blogs">
-        <h2>Popular Blogs</h2>
-        <div className="blog-list">
-          <Link to="/blogs" className="blog-item">
-            <div className="image-placeholder">Picture</div>
-            <p>Blog title 1</p>
-          </Link>
-          <Link to="/blogs" className="blog-item">
-            <div className="image-placeholder">Picture</div>
-            <p>Blog title 2</p>
-          </Link>
-          <Link to="/blogs" className="blog-item">
-            <div className="image-placeholder">Picture</div>
-            <p>Blog title 3</p>
-          </Link>
-        </div>
-      </section> */}
     </div>
   );
 };

@@ -64,8 +64,9 @@ const Archive: React.FC = () => {
       image: image5,
     },
   ];
+  const maxFeaturedId = Math.max(...featuredItems.map((item) => item.id));
   const selectedItems = selectedImages.map((image, index) => ({
-    id: featuredItems.length + index + 1,
+    id: maxFeaturedId + index + 1,
     description: `Selected GleWorks archive ${index + 1}`,
     image,
   }));
