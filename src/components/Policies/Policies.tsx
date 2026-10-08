@@ -15,7 +15,13 @@ const SECTIONS = [
 
 const Policies: React.FC = () => {
   const contentRef = useRef<HTMLElement>(null);
-  const [activeId, setActiveId] = useState<string>(SECTIONS[0].id);
+  const [activeId, setActiveId] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && SECTIONS.some((section) => section.id === hash)) return hash;
+    }
+    return SECTIONS[0].id;
+  });
 
   // Scroll the matching section to the top of the scrollable content panel.
   const scrollToSection = (id: string) => {
@@ -33,8 +39,14 @@ const Policies: React.FC = () => {
 
   // Highlight whichever section is currently in view as the user scrolls.
   useEffect(() => {
-    const root = contentRef.current;
-    if (!root || typeof IntersectionObserver === "undefined") return;
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const isMobile =
+      typeof window.matchMedia === "function"
+        ? window.matchMedia("(max-width: 640px)").matches
+        : window.innerWidth <= 640;
+    const root = isMobile ? null : contentRef.current;
+    if (!isMobile && !root) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
