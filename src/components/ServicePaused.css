@@ -11,14 +11,17 @@
 
 .service-paused h1 {
   margin: 0 0 20px;
-  font-size: 36px;
+  font-size: 32px;
+  line-height: 1.2;
   color: #1d1d1f;
 }
 
 .service-paused p {
+  max-width: 65ch;
+  margin: 0 0 20px;
   font-size: 16px;
   line-height: 1.6;
-  color: #505050;
+  color: #333;
 }
 
 .service-paused-links {
@@ -40,10 +43,6 @@
 
 @media (max-width: 640px) {
   .service-paused h1 {
-    font-size: 28px;
-  }
-
-  .service-paused p {
-    font-size: 14px;
+    font-size: 26px;
   }
 }
