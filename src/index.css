@@ -1,4 +1,11 @@
 
+:root {
+    --page-width: 1280px;
+    --page-gutter: clamp(20px, 4vw, 40px);
+    --page-spacing: clamp(32px, 5vw, 64px);
+    --link-color: #174aa8;
+}
+
 body, html {
     margin: 0;
     padding: 0;

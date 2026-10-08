@@ -3,9 +3,9 @@
   font-family: Arial, sans-serif;
   line-height: 1.7;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: var(--page-width);
   min-height: 52vh;
-  padding: clamp(80px, 10vw, 150px) 20px;
+  padding: var(--page-spacing) var(--page-gutter);
 }
 
 .not-found-container h1 {
@@ -24,7 +24,7 @@
 }
 
 .not-found-container a {
-  color: #174aa8;
+  color: var(--link-color);
   font-weight: bold;
   text-decoration: none;
 }

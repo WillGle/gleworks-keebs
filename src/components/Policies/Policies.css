@@ -1,20 +1,25 @@
 .policies-container {
     display: flex;
     height: 100vh;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: var(--page-spacing) var(--page-gutter);
+    gap: 40px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f5f5f7;
   }
   
   /* Sidebar Styling */
   .policies-sidebar {
     width: 250px;
-    background-color: #eaeaea;
-    padding: 20px;
+    flex-shrink: 0;
+    background-color: #f5f5f7;
+    padding: 0;
     box-sizing: border-box;
     position: sticky;
     top: 0;
     align-self: flex-start;
-    height: 100vh;
+    height: auto;
   }
 
   .policies-sidebar ul {
@@ -46,16 +51,18 @@
   }
 
   .policies-sidebar a.active {
-    color: #000;
+    color: var(--link-color);
     background-color: #ffffff;
-    border-left-color: #333;
+    border-left-color: var(--link-color);
   }
   
   /* Content Styling */
   .policies-content {
     flex: 1;
-    padding: 30px;
-    background-color: #ffffff;
+    min-width: 0;
+    max-width: 780px;
+    padding: 0;
+    background-color: #f5f5f7;
     overflow-y: auto;
     scroll-behavior: smooth;
   }
@@ -73,7 +80,7 @@
 
   .policies-content h1 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   .policies-content h3 {
@@ -94,13 +101,14 @@
     .policies-container {
       flex-direction: column;
       height: auto;
+      gap: 24px;
     }
 
     .policies-sidebar {
       width: 100%;
       height: auto;
       position: static;
-      padding: 16px 20px;
+      padding: 0;
     }
 
     .policies-sidebar ul {
@@ -121,12 +129,12 @@
     }
 
     .policies-sidebar a.active {
-      border-bottom-color: #333;
+      border-bottom-color: var(--link-color);
     }
 
     .policies-content {
       width: 100%;
-      padding: 24px 20px;
+      padding: 0;
       overflow-y: visible;
     }
 
