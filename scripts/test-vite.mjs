@@ -23,6 +23,7 @@ function launch(mode, port) {
   const child = spawn(process.execPath, [vite.pathname, ...(mode === 'preview' ? ['preview'] : []), '--port', String(port)], {
     cwd: new URL('..', import.meta.url),
     stdio: ['ignore', 'pipe', 'pipe'],
+    env: { ...process.env, NO_COLOR: '1' },
   })
   let output = ''
   for (const stream of [child.stdout, child.stderr]) stream.on('data', (data) => { output += data })
