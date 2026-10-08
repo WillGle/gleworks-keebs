@@ -146,6 +146,17 @@ result; inspect and remove that folder manually. Logs are local artifacts and
 must be uploaded from `logs/` by a future CI pipeline before its workspace is
 discarded. Commands run directly with `npx` do not use the wrapper.
 
+Direct Vitest coverage and Playwright runs still write reports under dated
+`logs/<UTC-date-time>-direct-<tool>-<pid>/` folders instead of the repository root.
+They do not have the wrapper's top-level output capture, result metadata, or
+automatic retention; use the npm scripts for those features. Explicit CLI or
+environment output-directory overrides can change these locations.
+
+Old root-level `coverage/`, `playwright-report/`, and `test-results/` were moved
+intact into a dated `logs/` archive run. Its migration log records original
+locations and timestamps; it does not establish the original tests' status.
+`dist/` remains the deployment artifact, and tool caches stay in `node_modules/`.
+
 To capture an extra command, for example dependency installation:
 
 ```bash

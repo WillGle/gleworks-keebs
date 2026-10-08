@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import path from 'node:path'
+
+const runDir = process.env.GLEWORKS_RUN_DIR || path.resolve('logs', `${new Date().toISOString().replace(/[:.]/g, '-')}-direct-vitest-${process.pid}`)
 
 export default defineConfig({
   plugins: [react()],
@@ -14,7 +17,7 @@ export default defineConfig({
       provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],
       reportOnFailure: true,
-      reportsDirectory: process.env.GLEWORKS_RUN_DIR ? `${process.env.GLEWORKS_RUN_DIR}/coverage` : 'coverage',
+      reportsDirectory: path.join(runDir, 'coverage'),
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
         'src/test/',
