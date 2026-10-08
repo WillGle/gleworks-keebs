@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../assets/fonts/bebas-neue-latin-400.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
 
 /* Header CSS Styles */
 .topHeader {

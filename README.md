@@ -38,6 +38,7 @@ Key areas of the site include:
 - **Bundler & Tooling:** Vite
 - **Routing:** React Router (SPA with route-level lazy loading)
 - **Styling:** Component CSS files
+- **Fonts:** Local Bebas Neue 400 Latin WOFF2 for logos (`src/assets/fonts/`); SIL OFL license in `public/fonts/bebas-neue-OFL.txt`, included in `dist/`. Page content uses Arial/system sans-serif.
 - **Testing & Quality:** Vitest, React Testing Library, Playwright, ESLint
 - **Production Serving:** Static `dist/` served by homelab; optional Nginx container
 
