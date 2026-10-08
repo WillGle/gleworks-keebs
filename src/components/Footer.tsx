@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <div className="logo">GLEWORKS</div>
           <p>Ho Chi Minh, Vietnam</p>
-          <p>support@gleworks.io.vn</p>
+          <p>hello.gleworks@gmail.com</p>
           <div className="social-icons">
             <a href="https://www.instagram.com/gleworks/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />

@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 test('keeps the newsletter placeholder and contact information', () => {
   render(<Footer />)
   expect(screen.getByPlaceholderText('Email')).toHaveAttribute('type', 'email')
-  expect(screen.getByText('support@gleworks.io.vn')).toBeInTheDocument()
+  expect(screen.getByText('hello.gleworks@gmail.com')).toBeInTheDocument()
 })
 
 test('links each policy to its section', () => {

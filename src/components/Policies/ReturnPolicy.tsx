@@ -26,7 +26,7 @@ const ReturnPolicy: React.FC = () => {
       <h3>Previous Work</h3>
       <p>
         If you have a question about previous work that involved you directly,
-        contact support@gleworks.io.vn with the relevant context. Any follow-up
+        contact hello.gleworks@gmail.com with the relevant context. Any follow-up
         will be handled case by case outside the public website.
       </p>
     </section>

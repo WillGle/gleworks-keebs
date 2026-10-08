@@ -56,7 +56,7 @@ const TermOfService: React.FC = () => {
       </p>
       <h3>Contact</h3>
       <p>
-        For questions about these terms, contact support@gleworks.io.vn.
+        For questions about these terms, contact hello.gleworks@gmail.com.
       </p>
     </section>
   );

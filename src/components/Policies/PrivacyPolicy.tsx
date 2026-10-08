@@ -60,7 +60,7 @@ const PrivacyPolicy: React.FC = () => {
       <h3>Contact</h3>
       <p>
         If you have any questions about how we handle your data, please reach
-        out to us at support@gleworks.io.vn.
+        out to us at hello.gleworks@gmail.com.
       </p>
     </section>
   );
